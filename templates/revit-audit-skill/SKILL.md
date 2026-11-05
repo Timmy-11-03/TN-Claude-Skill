@@ -5,7 +5,7 @@ description: Template for a read-only Revit audit skill. Copy this folder, renam
 
 # Revit Audit Template
 
-Read `../_shared/safety-rules.md` and `../_shared/naming-conventions.md` before using or editing this skill.
+Read `docs/safety-rules.md` and `docs/naming-conventions.md` in the repo before using or editing this skill.
 
 ## Purpose
 Describe in one sentence what this skill inspects (e.g. "Report views not placed on any sheet").

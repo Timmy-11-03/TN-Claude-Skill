@@ -1,48 +1,68 @@
 # TN Claude
 
-A personal skill toolkit for Claude. Each skill is a folder inside `skills/`, and the source lives on GitHub so it can be used on multiple computers.
+A personal skill toolkit for Claude, focused on BIM and Revit automation. Each skill is a folder in `skills/`. The repo is also a Claude Code plugin, and the source lives on GitHub so it can be used on multiple computers.
 
 ## Structure
 
 ```
-TN-Claude/
-├── skills/                    # one folder per skill
+TN-Claude-Skill/
+├── .claude-plugin/plugin.json   # plugin manifest (name, version)
+├── CLAUDE.md                    # maintainer rules, loaded by Claude Code
+├── CHANGELOG.md
+├── docs/
+│   ├── naming-conventions.md    # how to name skills
+│   └── safety-rules.md          # workflow and security rules for Revit skills
+├── skills/                      # one self-contained folder per skill
+│   ├── revit-change-case/
+│   │   ├── SKILL.md
+│   │   └── scripts/change_case.py
 │   └── revit-model-qa/
-│       ├── SKILL.md           # required
-│       └── references/        # optional: long docs, checklists
-├── templates/skill-template/  # template for new skills
-├── scripts/build.py           # validate, package ZIPs, install
-└── dist/                      # generated ZIPs (not committed to git)
+│       ├── SKILL.md
+│       └── references/checklist.md
+├── templates/
+│   ├── skill-template/          # generic skill template
+│   └── revit-audit-skill/       # template for read-only Revit audit skills
+└── scripts/build.py             # validate, package ZIPs, install
 ```
+
+## Skills
+
+| Skill | Type | Description |
+|---|---|---|
+| revit-change-case | write | Change case of sheet names, view names and text parameters |
+| revit-model-qa | audit | BIM QA: naming, empty parameters, warnings, handover report |
 
 ## Common tasks
 
 | Task | Command |
 |---|---|
-| Create a new skill from the template | `python scripts/build.py new skill-name` |
+| Create a new skill | `python scripts/build.py new skill-name` |
 | Validate all skills | `python scripts/build.py list` |
 | Package ZIPs for claude.ai | `python scripts/build.py zip` |
 | Install into Claude Code | `python scripts/build.py install` |
 
+## Use as a plugin (Claude Code)
+
+Install this repo as a plugin so all skills load together. Updating is `git pull`.
+
 ## Use on claude.ai / Claude Desktop
 
 1. `python scripts/build.py zip`
-2. Go to Customize > Skills > "+" and upload a file from `dist/` (one ZIP per skill).
+2. Customize > Skills > "+" and upload a ZIP from `dist/` (one per skill).
 3. Turn the skill on. "Code execution and file creation" must be enabled in Settings > Capabilities.
 
-## Use in Claude Code
+## Adding a new skill
 
-`python scripts/build.py install` copies the skills into `~/.claude/skills/`.
-
-## Adding a new skill (workflow)
-
-1. `python scripts/build.py new skill-name`
-2. Edit `skills/skill-name/SKILL.md`
+1. `python scripts/build.py new revit-<verb>-<object>` (or copy `templates/revit-audit-skill/`)
+2. Edit `skills/<name>/SKILL.md`; put code in the skill's `scripts/`
 3. `python scripts/build.py list` to validate
-4. `git add . && git commit -m "Add skill-name" && git push`
-5. On another computer: `git pull`, then zip/upload or install again
+4. Test on a detached sample model
+5. Update `CHANGELOG.md`, bump the version in `.claude-plugin/plugin.json`
+6. Work on a branch, open a Pull Request, merge to `main`
+7. On another computer: `git pull`
 
-## Conventions
-- Skill names: lowercase letters, digits and hyphens; must match the folder name.
-- One skill, one job. The `description` must say when to use it.
-- Never put secrets (API keys, passwords, client data) in a skill.
+## Conventions and security
+
+- Naming: `docs/naming-conventions.md`
+- Workflow and safety: `docs/safety-rules.md`
+- Never put secrets, client data or model files in the repo.

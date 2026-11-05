@@ -1,5 +1,7 @@
 # Naming Conventions
 
+Applies to every skill in `skills/`. Validate with `python scripts/build.py list`.
+
 ## Skill names
 - Pattern: `revit-<verb>-<object>` in lowercase kebab-case, max 64 characters.
 - The folder name must equal the `name` field in SKILL.md.

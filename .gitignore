@@ -1,5 +1,14 @@
-dist/
-__pycache__/
+*.nwc
+*.nwd
 *.pyc
+*.rfa
+*.rte
+*.rvt
 .DS_Store
+.env
 Thumbs.db
+__pycache__/
+config.local.json
+dist/
+exports/
+logs/

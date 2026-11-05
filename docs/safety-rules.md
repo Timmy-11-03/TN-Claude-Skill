@@ -23,7 +23,7 @@ Do not generate or run code that:
 - reads or writes files outside the project output folder
 - accesses credentials, tokens or environment secrets
 
-Reusable code lives in `_shared/scripts/` and is reviewed before use. Prefer it over ad-hoc code.
+Reusable code lives in the skill's own `scripts/` folder and is reviewed before use. Prefer it over ad-hoc code. Each skill must be self-contained (no `../` references), because skills are zipped and installed one by one.
 
 ## 4. Secrets and data
 - No tokens, passwords, internal server paths or client names in any skill file.

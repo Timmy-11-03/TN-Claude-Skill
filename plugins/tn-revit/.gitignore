@@ -1,9 +1,0 @@
-config.local.json
-.env
-*.rvt
-*.rfa
-*.rte
-*.nwc
-*.nwd
-exports/
-logs/
