@@ -1,0 +1,9 @@
+{
+  "name": "tn-revit",
+  "version": "0.2.0",
+  "description": "Personal Revit automation skills: audit, rename, export and QA workflows with built-in safety rules.",
+  "author": {
+    "name": "Timmy"
+  },
+  "keywords": ["revit", "bim", "automation", "skills"]
+}
