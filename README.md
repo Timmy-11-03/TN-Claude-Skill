@@ -43,7 +43,14 @@ TN-Claude-Skill/
 
 ## Use as a plugin (Claude Code)
 
-Install this repo as a plugin so all skills load together. Updating is `git pull`.
+Install from GitHub (needs Claude Code with `/plugin`):
+
+```
+/plugin marketplace add Timmy-11-03/TN-Claude-Skill
+/plugin install tn-claude@tn-claude-marketplace
+```
+
+Updating: run `/plugin marketplace update tn-claude-marketplace` and `claude plugin update tn-claude@tn-claude-marketplace`, or enable auto-update for this marketplace in `/plugin` > Marketplaces. Updates only arrive when `version` in `.claude-plugin/plugin.json` is bumped, so bump it on every release.
 
 ## Use on claude.ai / Claude Desktop
 

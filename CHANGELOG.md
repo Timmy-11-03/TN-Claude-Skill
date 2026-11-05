@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1
+- Add `.claude-plugin/marketplace.json` so the repo can be installed from GitHub via `/plugin marketplace add`.
+
 ## 0.3.0
 - Reorganize repo: repo root is now the plugin (`.claude-plugin/plugin.json`), shared rules moved to `docs/`, each skill self-contained.
 - `revit-change-case` replaced with the safer version (script in the skill's `scripts/`).
