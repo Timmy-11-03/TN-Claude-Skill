@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0
+- Add `install-markitdown-mcp` skill: installer script that sets up markitdown-mcp and registers it in Claude Desktop config (non-Revit setup skill).
+
 ## 0.4.0
 - Add `revit-install-mcp` skill: installer script + guide for setting up Revit MCP (mcp-server-for-revit-python) on a new machine.
 - Installer script installs Git and uv itself when winget is missing (asks Y/N first, `-Yes` to skip; Git installer SHA256-verified when published).

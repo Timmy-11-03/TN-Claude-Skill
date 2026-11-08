@@ -17,6 +17,7 @@ Applies to every skill in `skills/`. Validate with `python scripts/build.py list
 | `revit-export-*` | Output to file | No (writes files only) |
 | `revit-qa-*` | Orchestrate several checks | Depends |
 | `revit-install-*` | Set up tools on the user's machine | No (changes machine/config, needs confirmation) |
+| `install-*` | Same as above, for tools unrelated to Revit (e.g. `install-markitdown-mcp`) | No (changes machine/config, needs confirmation) |
 
 ## Description rule
 One or two sentences: what it does + when to use it, with trigger words in English and Vietnamese.
