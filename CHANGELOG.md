@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0
+- Add `revit-install-mcp` skill: installer script + guide for setting up Revit MCP (mcp-server-for-revit-python) on a new machine.
+- Installer script installs Git and uv itself when winget is missing (asks Y/N first, `-Yes` to skip; Git installer SHA256-verified when published).
+- Add `revit-install-*` verb prefix to naming conventions.
+
 ## 0.3.1
 - Add `.claude-plugin/marketplace.json` so the repo can be installed from GitHub via `/plugin marketplace add`.
 

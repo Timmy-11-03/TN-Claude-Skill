@@ -1,6 +1,6 @@
 {
   "name": "tn-claude",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "TN Claude: personal skill toolkit for BIM and Revit automation, with built-in safety rules.",
   "author": {
     "name": "Timmy"

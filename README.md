@@ -16,6 +16,10 @@ TN-Claude-Skill/
 │   ├── revit-change-case/
 │   │   ├── SKILL.md
 │   │   └── scripts/change_case.py
+│   ├── revit-install-mcp/
+│   │   ├── SKILL.md
+│   │   ├── scripts/install-revit-mcp.ps1
+│   │   └── references/install-guide.md
 │   └── revit-model-qa/
 │       ├── SKILL.md
 │       └── references/checklist.md
@@ -30,6 +34,7 @@ TN-Claude-Skill/
 | Skill | Type | Description |
 |---|---|---|
 | revit-change-case | write | Change case of sheet names, view names and text parameters |
+| revit-install-mcp | setup | Install and connect Revit MCP to Claude on a new machine |
 | revit-model-qa | audit | BIM QA: naming, empty parameters, warnings, handover report |
 
 ## Common tasks
